@@ -1,0 +1,192 @@
+/* Section Présentation avec champs de recherche + btn */
+.champsrecherche {
+    background-color: #EAEAEA;
+    display: flex;
+    justify-content: center;
+    padding: .7em;
+    
+    .fas {
+        margin-right: 1em;
+    }
+
+    &__input {
+    cursor: pointer;
+    background-color: #EAEAEA;
+    font-weight: bold;
+    border: none;
+        &::placeholder {
+            color: black;
+        }
+        &:focus {
+            outline: 0;
+        }
+    }
+}
+
+#presentation {
+    background-color: #f6f6f6;
+    text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
+
+    h2 {
+        padding-top: 1.2em;
+        margin: auto;
+        font-weight: bold;
+        width: 60%;
+    }
+
+    p {
+        margin-top: 5px;
+        color: gray;
+        font-weight:100;
+    }
+}
+
+/* Section Fonctionnement avec pictos + puces */
+#fonctionnement {
+    margin: 1.4em;
+    position: relative;
+    
+    h3 {
+        margin-top: 2.4em;
+    }
+
+    .fas {
+        color: #7e7e7e;
+        margin-right: 1.6em;
+    }
+
+    li {
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 1.3em;
+        padding: 1.4em 2em 1.4em 2.4em;
+        text-align: left;
+        max-width: 100%;
+        background-color: #f6f6f6;
+        box-shadow: 1px 3px 5px #C1C0C0;
+        border-radius: 17px;
+        font-weight: bold;
+        &:hover {
+            background-color: #f5edff;
+            cursor: pointer;
+        
+        > .fas {
+                color: $color-primary;
+            }
+        }
+
+        &::before {
+            @include puce-liste;
+            margin-left: -50px;
+        }
+    }
+}
+
+/* Section Restaurant */
+#restaurants {
+    padding-top: 1.5em;
+    padding-bottom: 2.5em;
+    margin-top: 1.4em;
+    margin-right: 1.4em;
+    margin-left: 1.4em;
+    margin-bottom: 0;
+    position: relative;
+}
+
+figcaption {
+    margin-left: 1em;
+    margin-right: 1.4em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h4 {
+        margin-top: .7em;
+        margin-bottom: .3em;
+    }
+
+    p {
+        margin-top: 0;
+        margin-bottom: 1.2em;
+    }
+}
+
+/* Bouton coeur */
+.btncoeur {
+    position: relative;
+
+    .far:hover { 
+        color: rgb(75, 3, 78);
+        font-weight: bold;
+        mix-blend-mode: hard-light;
+    }
+
+    .fa-heart:hover::after {
+        position: absolute;
+        content: "";
+        left: 0px;
+        top: 6px;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(transparent, rgb(221, 184, 205));
+    }
+}
+
+.encartmenu {
+    position:relative;
+    margin-left: 0;
+    margin-right: 0;
+    background-color: white;
+	box-shadow      : 0 7px 8px #dfdcdc;
+	border-radius   : 22px;
+    @include encart-img;
+
+    &__nouveau {
+    position: absolute;
+    right: 17px;
+    top: 5px;
+    padding: 5px;
+    font-weight: bold;
+    background-color: $color-tertiary;
+    color: darken($color-tertiary, 50%);
+    }
+}
+
+/* MEDIA QUERIES */
+
+/* Tablette */
+@media screen and (min-width: 930px) {
+    #presentation h2 {
+        width: 100%;
+    }
+
+    #fonctionnement ul {
+        display: flex;
+        justify-content: space-between;
+
+        li {
+            margin: 0;
+        }
+    }
+
+    #restaurants ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap      : 35px;
+    }
+
+    footer ul {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 1200px) {
+    #fonctionnement, #restaurants, .infofooter {
+        max-width: 1200px;
+        margin: auto;
+    }
+}
