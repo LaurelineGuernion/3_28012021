@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap");
 body {
@@ -36,6 +35,10 @@ a:hover {
 }
 
 button {
+  outline: 0;
+}
+
+.btndegrade {
   cursor: pointer;
   background: linear-gradient(to bottom right, #FF79DA, #9356DC);
   outline: 0;
@@ -48,8 +51,26 @@ button {
   margin-top: 1em;
   margin-bottom: 3em;
 }
-button:hover {
+.btndegrade:hover {
   opacity: 0.9;
+}
+
+.btncoeur {
+  position: relative;
+}
+.btncoeur .far:hover {
+  color: #640468;
+  font-weight: bold;
+  mix-blend-mode: hard-light;
+}
+.btncoeur .fa-heart:hover::after {
+  position: absolute;
+  content: "";
+  left: 0px;
+  top: 4px;
+  height: 75%;
+  width: 100%;
+  background: linear-gradient(transparent, #ac9ca7);
 }
 
 header {
@@ -86,7 +107,6 @@ footer h2 {
   margin-right: 10px;
 }
 
-/* Section Présentation avec champs de recherche + btn */
 .champsrecherche {
   background-color: #EAEAEA;
   display: flex;
@@ -127,7 +147,6 @@ footer h2 {
   font-weight: 100;
 }
 
-/* Section Fonctionnement avec pictos + puces */
 #fonctionnement {
   margin: 1.4em;
   position: relative;
@@ -170,7 +189,6 @@ footer h2 {
   margin-left: -50px;
 }
 
-/* Section Restaurant */
 #restaurants {
   padding-top: 1.5em;
   padding-bottom: 2.5em;
@@ -195,25 +213,6 @@ figcaption h4 {
 figcaption p {
   margin-top: 0;
   margin-bottom: 1.2em;
-}
-
-/* Bouton coeur */
-.btncoeur {
-  position: relative;
-}
-.btncoeur .far:hover {
-  color: #4b034e;
-  font-weight: bold;
-  mix-blend-mode: hard-light;
-}
-.btncoeur .fa-heart:hover::after {
-  position: absolute;
-  content: "";
-  left: 0px;
-  top: 6px;
-  height: 100%;
-  width: 100%;
-  background: linear-gradient(transparent, #ddb8cd);
 }
 
 .encartmenu {
@@ -253,8 +252,6 @@ figcaption p {
   color: #1b6150;
 }
 
-/* MEDIA QUERIES */
-/* Tablette */
 @media screen and (min-width: 930px) {
   #presentation h2 {
     width: 100%;
@@ -279,11 +276,161 @@ figcaption p {
     justify-content: space-between;
   }
 }
-/* Desktop */
 @media screen and (min-width: 1200px) {
   #fonctionnement, #restaurants, .infofooter {
     max-width: 1200px;
     margin: auto;
+  }
+}
+.headermenu {
+  display: flex;
+  margin-top: 20px;
+  position: relative;
+}
+.headermenu .fas {
+  position: absolute;
+  top: 0.6em;
+  font-size: 1.3em;
+  margin-left: 1.5em;
+}
+.headermenu h1 {
+  max-width: 100%;
+  margin: auto;
+}
+
+.imageentete {
+  margin: 0;
+}
+.imageentete__img {
+  max-width: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  object-position: 50% 60%;
+  height: 40vh;
+}
+
+.mainmenu {
+  margin-top: 0.3em;
+  position: relative;
+  width: 100%;
+  background-color: #f6f6f6;
+  border-radius: 25px 25px 0 0;
+  margin-top: -55px;
+}
+
+.menu__titre, .encart {
+  padding-left: 1.4em;
+  padding-right: 1.4em;
+  padding-top: 0.5em;
+}
+
+.menu__titre {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu__titre h2 {
+  font-family: Shrikhand, serif;
+  font-size: 1.8em;
+  font-weight: 200;
+}
+
+.encart__titre {
+  font-weight: lighter;
+}
+.encart__titre::after {
+  content: "";
+  display: block;
+  margin-top: 4px;
+  width: 55px;
+  height: 3px;
+  background-color: #99E2D0;
+}
+
+.encart__description {
+  margin-bottom: 1em;
+  box-shadow: 1px 2px 7px #dbd8d8;
+  display: flex;
+  max-width: 100%;
+  border-radius: 20px;
+  background-color: white;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.encart__infos {
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  overflow: hidden;
+}
+
+.encart__titrerecette {
+  margin-bottom: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.encart__descriptifrecette {
+  margin-top: 0.2em;
+  margin-right: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.prix {
+  margin-left: 1em;
+  font-weight: bold;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.fa-check-circle {
+  color: white;
+  font-size: 2em;
+  transition: transform 0.5s ease-in-out;
+}
+
+.encart__valider {
+  cursor: pointer;
+  background-color: #99E2D0;
+  border: none;
+  min-width: 5em;
+  margin-left: 1em;
+  margin-right: -5em;
+  background-color: #99e2d0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-duration: 0.5s;
+}
+
+.encart__description:hover > .encart__valider {
+  margin-right: 0.9em;
+  transform: translateX(1em);
+}
+.encart__description:hover > .encart__valider > .fas {
+  transform: rotate(1turn);
+}
+
+.validation {
+  cursor: pointer;
+  margin-top: 2em;
+  display: flex;
+  justify-content: center;
+}
+.validation .btndegrade {
+  font-size: 1.2em;
+  padding-right: 2.4em;
+  padding-left: 2.4em;
+}
+
+@media screen and (min-width: 930px) {
+  .menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 100%;
   }
 }
 

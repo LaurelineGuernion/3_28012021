@@ -1,4 +1,4 @@
-/* Section Présentation avec champs de recherche + btn */
+// Section Présentation avec champs de recherche + btn " Explorer nos restaurants "
 .champsrecherche {
     background-color: #EAEAEA;
     display: flex;
@@ -43,7 +43,7 @@
     }
 }
 
-/* Section Fonctionnement avec pictos + puces */
+// Section Fonctionnement avec pictos + puces
 #fonctionnement {
     margin: 1.4em;
     position: relative;
@@ -72,7 +72,7 @@
             background-color: #f5edff;
             cursor: pointer;
         
-        > .fas {
+        > .fas { // hover avec couleur icone
                 color: $color-primary;
             }
         }
@@ -84,7 +84,7 @@
     }
 }
 
-/* Section Restaurant */
+// Section Restaurant
 #restaurants {
     padding-top: 1.5em;
     padding-bottom: 2.5em;
@@ -113,27 +113,6 @@ figcaption {
     }
 }
 
-/* Bouton coeur */
-.btncoeur {
-    position: relative;
-
-    .far:hover { 
-        color: rgb(75, 3, 78);
-        font-weight: bold;
-        mix-blend-mode: hard-light;
-    }
-
-    .fa-heart:hover::after {
-        position: absolute;
-        content: "";
-        left: 0px;
-        top: 6px;
-        height: 100%;
-        width: 100%;
-        background: linear-gradient(transparent, rgb(221, 184, 205));
-    }
-}
-
 .encartmenu {
     position:relative;
     margin-left: 0;
@@ -154,10 +133,11 @@ figcaption {
     }
 }
 
-/* MEDIA QUERIES */
+// MEDIA QUERIES
 
-/* Tablette */
+// Medium
 @media screen and (min-width: 930px) {
+    // Page home
     #presentation h2 {
         width: 100%;
     }
@@ -183,8 +163,9 @@ figcaption {
     }
 }
 
-/* Desktop */
+// Large
 @media screen and (min-width: 1200px) {
+    // Page home
     #fonctionnement, #restaurants, .infofooter {
         max-width: 1200px;
         margin: auto;

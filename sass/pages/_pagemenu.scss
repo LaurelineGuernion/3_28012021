@@ -1,0 +1,166 @@
+// PAGE MENU
+// Header - page menu
+.headermenu {
+    display: flex;
+    margin-top: 20px;
+    position: relative;
+
+    .fas {
+    position: absolute;
+    top: .6em;
+    font-size: 1.3em;
+    margin-left: 1.5em;
+    }
+
+    h1 {
+        max-width: 100%;
+        margin: auto;
+    }
+}
+
+// Image principal - page menu
+
+.imageentete {
+    margin: 0; 
+    &__img {
+        max-width    : 100%;
+        min-width    : 100%;
+        object-fit   : cover;
+        object-position: 50% 60%;
+        height       : 40vh;
+    }
+}
+
+.mainmenu {
+    margin-top: .3em;
+    position: relative;
+    width: 100%;
+    background-color: #f6f6f6;
+    border-radius: 25px 25px 0 0;
+    margin-top:-55px;
+}
+
+// // Section menu titre
+
+.menu__titre, .encart {
+    padding-left: 1.4em;
+    padding-right: 1.4em;
+    padding-top: .5em;
+}
+
+.menu__titre {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    h2 {
+    font-family: Shrikhand, serif;
+    font-size: 1.8em;
+    font-weight: 200;
+}
+}
+
+// Section menu
+.encart__titre {
+    font-weight: lighter;
+    &::after {
+        content: "";
+        display: block;
+        margin-top: 4px;
+        width: 55px;
+        height: 3px;
+        background-color: $color-tertiary;
+    }
+}
+
+.encart__description {
+    margin-bottom: 1em;
+    box-shadow: 1px 2px 7px #dbd8d8;
+    display: flex;
+    max-width: 100%;
+    border-radius: 20px;
+    background-color:white;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.encart__infos {
+    padding-left: 1em;
+    padding-right: 1em;
+    width: 100%;
+    overflow: hidden;
+}
+
+.encart__titrerecette {
+    margin-bottom: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.encart__descriptifrecette {
+    margin-top: .2em;
+    margin-right: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.prix {
+    margin-left: 1em;
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.fa-check-circle {
+    color: white;
+    font-size: 2em;
+    transition: transform .5s ease-in-out;
+}
+
+.encart__valider {
+    cursor: pointer;
+    background-color: $color-tertiary;
+    border: none;
+    min-width: 5em;
+    margin-left: 1em;
+    margin-right: -5em;
+    background-color: #99e2d0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: .5s;
+}
+
+.encart__description:hover {
+    > .encart__valider {
+        margin-right: .9em;
+        transform: translateX(1em);
+        > .fas {
+            transform: rotate(1turn);
+        }
+    }
+}
+
+.validation {
+    cursor: pointer;
+    margin-top: 2em;
+    display: flex;
+    justify-content: center;
+    .btndegrade {
+        font-size: 1.2em;
+        padding-right: 2.4em;
+        padding-left: 2.4em;
+    }
+}
+
+// MEDIA QUERIES
+
+// Medium
+@media screen and (min-width: 930px) {
+    .menu {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 100%;
+    } 
+ }
