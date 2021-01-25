@@ -42,6 +42,10 @@
 
 // // Section menu titre
 
+.menu {
+    display:block;
+}
+
 .menu__titre, .encart {
     padding-left: 1.4em;
     padding-right: 1.4em;
@@ -57,10 +61,11 @@
     font-family: Shrikhand, serif;
     font-size: 1.8em;
     font-weight: 200;
-}
+    }
 }
 
 // Section menu
+
 .encart__titre {
     font-weight: lighter;
     &::after {
@@ -74,72 +79,72 @@
 }
 
 .encart__description {
-    margin-bottom: 1em;
-    box-shadow: 1px 2px 7px #dbd8d8;
-    display: flex;
-    max-width: 100%;
-    border-radius: 20px;
-    background-color:white;
-    white-space: nowrap;
-    overflow: hidden;
+margin-bottom: 1em;
+background-color: rgba(255,255,255,1);
+display: flex;
+border-radius: 20px;
+overflow: hidden;
+will-change: transform;
 }
-
-.encart__infos {
-    padding-left: 1em;
-    padding-right: 1em;
-    width: 100%;
-    overflow: hidden;
-}
-
-.encart__titrerecette {
-    margin-bottom: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.encart__descriptifrecette {
-    margin-top: .2em;
-    margin-right: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.prix {
-    margin-left: 1em;
+  
+  .encart__infos {
+      padding-left: 1em;
+      width: 100%;
+      overflow: hidden;
+  }
+  
+  p, h4 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  }
+  
+  h4 {
+    margin-bottom: .3em;
+  }
+  
+  p {
+    margin-top:0;
+  }
+  
+  .prix {
+    width:50px;
+    margin-right:.5em;
     font-weight: bold;
     display: flex;
-    justify-content: flex-end;
     align-items: flex-end;
-}
-
-.fa-check-circle {
-    color: white;
-    font-size: 2em;
-    transition: transform .5s ease-in-out;
-}
-
-.encart__valider {
-    cursor: pointer;
+    justify-content: flex-end;
+    transform: translateX(100%);
+    transition:2s;
+  }
+  
+  .encart__valider {
     background-color: $color-tertiary;
-    border: none;
-    min-width: 5em;
-    margin-left: 1em;
-    margin-right: -5em;
-    background-color: #99e2d0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition-duration: .5s;
+    border:none;
+    height:80px;
+    width: 6.5em;
+    transform: translateX(100%);
+    transition:2s;
+  }
+  
+  .encart__valider .fas {
+    color: white;
+    transition: 1s ease-in-out;
+    font-size: 1.6em;
+  }
+  
+  .encart__description:hover > .encart__valider {
+    transform: translateX(0%);
+  }
+  
+  .encart__description:hover {
+  > .prix {
+      transform: translateX(0%);
+  }
 }
 
-.encart__description:hover {
-    > .encart__valider {
-        margin-right: .9em;
-        transform: translateX(1em);
-        > .fas {
-            transform: rotate(1turn);
-        }
-    }
+.encart__description:hover .fas {
+    transform: rotate(1turn);
 }
 
 .validation {
@@ -155,12 +160,24 @@
 }
 
 // MEDIA QUERIES
-
 // Medium
+
 @media screen and (min-width: 930px) {
     .menu {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        max-width: 100%;
-    } 
+        grid-template-columns: repeat(3, 32.8%);
+    }
+ }
+
+// Large
+@media screen and (min-width: 1200px) {
+    .mainmenu {
+        position: relative;
+        max-width: 1350px;
+        margin: auto;
+        margin-top:-55px;
+    }
+    .encart {
+        padding-right: 0;
+    }
  }

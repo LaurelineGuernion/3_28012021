@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap");
 body {
@@ -56,21 +57,56 @@ button {
 }
 
 .btncoeur {
+  height: 19px;
+  width: 21.2px;
+  padding-top: 1.2px;
+  cursor: pointer;
   position: relative;
+  overflow: hidden;
 }
-.btncoeur .far:hover {
-  color: #640468;
-  font-weight: bold;
-  mix-blend-mode: hard-light;
-}
-.btncoeur .fa-heart:hover::after {
-  position: absolute;
+.btncoeur :hover::before {
   content: "";
-  left: 0px;
-  top: 4px;
-  height: 75%;
+  position: absolute;
+  top: 0;
+  right: 21.2px;
+  height: 100%;
   width: 100%;
-  background: linear-gradient(transparent, #ac9ca7);
+  background: linear-gradient(0deg, #FF79DA 10%, #9356DC 100%);
+  transform: translateX(100%);
+  transition: 1s ease-out;
+}
+.btncoeur :hover::after {
+  content: "";
+  font-weight: bold;
+  background-color: white;
+  mix-blend-mode: lighten;
+}
+
+.btncoeurmenu {
+  height: 19px;
+  width: 21.2px;
+  padding-top: 1.2px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.btncoeurmenu :hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 21.2px;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(0deg, #FF79DA 10%, #9356DC 100%);
+  transform: translateX(100%);
+  transition: 1s ease-out;
+}
+.btncoeurmenu :hover::after {
+  content: "";
+  font-weight: bold;
+  height: 19px;
+  background-color: #f6f6f6;
+  mix-blend-mode: lighten;
 }
 
 header {
@@ -318,6 +354,10 @@ figcaption p {
   margin-top: -55px;
 }
 
+.menu {
+  display: block;
+}
+
 .menu__titre, .encart {
   padding-left: 1.4em;
   padding-right: 1.4em;
@@ -349,68 +389,68 @@ figcaption p {
 
 .encart__description {
   margin-bottom: 1em;
-  box-shadow: 1px 2px 7px #dbd8d8;
-  display: flex;
-  max-width: 100%;
-  border-radius: 20px;
   background-color: white;
-  white-space: nowrap;
+  display: flex;
+  border-radius: 20px;
   overflow: hidden;
+  will-change: transform;
 }
 
 .encart__infos {
   padding-left: 1em;
-  padding-right: 1em;
   width: 100%;
   overflow: hidden;
 }
 
-.encart__titrerecette {
-  margin-bottom: 0;
-  overflow: hidden;
+p, h4 {
   text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
-.encart__descriptifrecette {
-  margin-top: 0.2em;
-  margin-right: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
+h4 {
+  margin-bottom: 0.3em;
+}
+
+p {
+  margin-top: 0;
 }
 
 .prix {
-  margin-left: 1em;
+  width: 50px;
+  margin-right: 0.5em;
   font-weight: bold;
   display: flex;
-  justify-content: flex-end;
   align-items: flex-end;
-}
-
-.fa-check-circle {
-  color: white;
-  font-size: 2em;
-  transition: transform 0.5s ease-in-out;
+  justify-content: flex-end;
+  transform: translateX(100%);
+  transition: 2s;
 }
 
 .encart__valider {
-  cursor: pointer;
   background-color: #99E2D0;
   border: none;
-  min-width: 5em;
-  margin-left: 1em;
-  margin-right: -5em;
-  background-color: #99e2d0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition-duration: 0.5s;
+  height: 80px;
+  width: 6.5em;
+  transform: translateX(100%);
+  transition: 2s;
+}
+
+.encart__valider .fas {
+  color: white;
+  transition: 1s ease-in-out;
+  font-size: 1.6em;
 }
 
 .encart__description:hover > .encart__valider {
-  margin-right: 0.9em;
-  transform: translateX(1em);
+  transform: translateX(0%);
 }
-.encart__description:hover > .encart__valider > .fas {
+
+.encart__description:hover > .prix {
+  transform: translateX(0%);
+}
+
+.encart__description:hover .fas {
   transform: rotate(1turn);
 }
 
@@ -429,8 +469,19 @@ figcaption p {
 @media screen and (min-width: 930px) {
   .menu {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 100%;
+    grid-template-columns: repeat(3, 32.8%);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .mainmenu {
+    position: relative;
+    max-width: 1350px;
+    margin: auto;
+    margin-top: -55px;
+  }
+
+  .encart {
+    padding-right: 0;
   }
 }
 

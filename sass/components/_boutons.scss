@@ -5,21 +5,58 @@
 }
 
 .btncoeur {
-   position: relative;
+  height: 19px;
+  width: 21.2px;
+  padding-top: 1.2px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
 
-   .far:hover { 
-       color: rgb(100, 4, 104);
-       font-weight: bold;
-       mix-blend-mode: hard-light;
-   }
+  :hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right:21.2px;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(0deg, #FF79DA 10%,#9356DC 100%);
+    transform: translateX(100%);
+    transition:1s ease-out;
+  }
 
-   .fa-heart:hover::after {
-       position: absolute;
-       content: "";
-       left: 0px;
-       top: 4px;
-       height: 75%;
-       width: 100%;
-       background: linear-gradient(transparent, rgb(172, 156, 167));
-   }
+  :hover::after {
+  content:"\f004";
+  font-weight: bold;
+  background-color:white;
+  mix-blend-mode: lighten;
+  }
 }
+
+.btncoeurmenu {
+  height: 19px;
+  width: 21.2px;
+  padding-top: 1.2px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  :hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right:21.2px;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(0deg, #FF79DA 10%,#9356DC 100%);
+    transform: translateX(100%);
+    transition: 1s ease-out;
+   }
+
+   :hover::after {
+    content:"\f004";
+    font-weight: bold;
+    height: 19px;
+    background-color: #f6f6f6;
+    mix-blend-mode: lighten;
+   }
+} 
