@@ -3,4 +3,6 @@ $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
 
 $color-footer: #353535;
-$couleur-degrade: linear-gradient(to bottom right, #FF79DA, #9356DC);
+$box-shadow: #dfdcdc;
+$couleur-degrade: linear-gradient(to bottom right, $color-secondary, $color-primary);
+$couleur-degrade-remplissage: linear-gradient(0deg, #FF79DA 10%,#9356DC 100%);

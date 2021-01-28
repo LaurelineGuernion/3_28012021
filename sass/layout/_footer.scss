@@ -3,24 +3,27 @@ footer {
     background-color: $color-footer;
     color: white;
     text-align: left;
+
     h2 {
     font-family: Shrikhand, serif;
     margin-top: .3em;
-    font-size: 1.3em;
-    font-weight:100;
+    font-size: 1.2em;
+    font-weight: 100;
     }
 }
 
 .infofooter {
     li {
-        padding-bottom: 12px;
+        padding-bottom: 1em;
     }
+
     a {
         color: white;
         &:hover {
         color:$color-secondary;
         }   
     }
+
     .fas {
         width: 20px;
         margin-right: 10px;

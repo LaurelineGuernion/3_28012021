@@ -1,7 +1,7 @@
 .btndegrade {
    @include bouton-degrade;
    margin-top: 1em;
-   margin-bottom: 3em;
+   margin-bottom: 3.7em;
 }
 
 .btncoeur {
@@ -19,16 +19,16 @@
     right:21.2px;
     height: 100%;
     width: 100%;
-    background: linear-gradient(0deg, #FF79DA 10%,#9356DC 100%);
+    background: $couleur-degrade-remplissage;
     transform: translateX(100%);
-    transition:1s ease-out;
+    transition: .3s ease-out;
   }
 
   :hover::after {
-  content:"\f004";
-  font-weight: bold;
-  background-color:white;
-  mix-blend-mode: lighten;
+    content:"\f004";
+    font-weight: bold;
+    background-color:white;
+    mix-blend-mode: lighten;
   }
 }
 
@@ -49,14 +49,14 @@
     width: 100%;
     background: linear-gradient(0deg, #FF79DA 10%,#9356DC 100%);
     transform: translateX(100%);
-    transition: 1s ease-out;
+    transition: .3s ease-out;
    }
 
-   :hover::after {
-    content:"\f004";
-    font-weight: bold;
-    height: 19px;
-    background-color: #f6f6f6;
-    mix-blend-mode: lighten;
+  :hover::after {
+      content:"\f004";
+      font-weight: bold;
+      height: 19px;
+      background-color: #f6f6f6;
+      mix-blend-mode: lighten;
    }
 } 

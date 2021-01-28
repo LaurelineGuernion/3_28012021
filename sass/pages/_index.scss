@@ -1,6 +1,7 @@
-// Section Présentation avec champs de recherche + btn " Explorer nos restaurants "
+// SECTION PRÉSENTATION avec champs de recherche + btn " Explorer nos restaurants "
 .champsrecherche {
     background-color: #EAEAEA;
+    mix-blend-mode: darken;
     display: flex;
     justify-content: center;
     padding: .7em;
@@ -33,19 +34,20 @@
         padding-top: 1.2em;
         margin: auto;
         font-weight: bold;
-        width: 60%;
+        width: 80%;
     }
 
     p {
-        margin-top: 5px;
+        margin-top: 15px;
         color: gray;
-        font-weight:100;
+        font-size: 1em;
+        font-weight: 300;
     }
 }
 
-// Section Fonctionnement avec pictos + puces
+// SECTION FONCTIONNEMENT avec pictos + puces
 #fonctionnement {
-    margin: 1.4em;
+    margin: 1.3em;
     position: relative;
     
     h3 {
@@ -65,8 +67,8 @@
         text-align: left;
         max-width: 100%;
         background-color: #f6f6f6;
-        box-shadow: 1px 3px 5px #C1C0C0;
-        border-radius: 17px;
+        box-shadow: 1px 5px 10px $box-shadow;
+        border-radius: 20px;
         font-weight: bold;
         &:hover {
             background-color: #f5edff;
@@ -84,7 +86,7 @@
     }
 }
 
-// Section Restaurant
+// SECTION RESTAURANT
 #restaurants {
     padding-top: 1.5em;
     padding-bottom: 2.5em;
@@ -98,7 +100,7 @@
 figcaption {
     margin-left: 1em;
     margin-right: 1.4em;
-   display: flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
 
@@ -110,15 +112,16 @@ figcaption {
     p {
         margin-top: 0;
         margin-bottom: 1.2em;
+        font-weight: 300;
     }
 }
 
 .encartmenu {
-    position:relative;
+    position: relative;
     margin-left: 0;
     margin-right: 0;
     background-color: white;
-	box-shadow      : 0 7px 8px #dfdcdc;
+	box-shadow      : 0 7px 8px $box-shadow;
 	border-radius   : 22px;
     @include encart-img;
 
@@ -129,15 +132,15 @@ figcaption {
     padding: 5px;
     font-weight: bold;
     background-color: $color-tertiary;
-    color: darken($color-tertiary, 50%);
+    color: darken($color-tertiary, 40%);
     }
 }
 
 // MEDIA QUERIES
 
-// Medium
+// MEDIUM
 @media screen and (min-width: 930px) {
-    // Page home
+    // PAGE HOME
     #presentation h2 {
         width: 100%;
     }
@@ -163,9 +166,9 @@ figcaption {
     }
 }
 
-// Large
+// LARGE
 @media screen and (min-width: 1200px) {
-    // Page home
+    // PAGE HOME
     #fonctionnement, #restaurants, .infofooter {
         max-width: 1200px;
         margin: auto;
