@@ -1,13 +1,14 @@
 @mixin bouton-degrade($color:$couleur-degrade) {
-    cursor: pointer;
-    background: $color;
-    outline: 0;
     padding: 1em 1.4em 1em 1.4em;
+    background   : $color;
+    color : white;
+    outline: 0;
     border-radius: 50px;
-    color: white;
     border: none;
+    box-shadow : 1px 3px 5px $box-shadow;
     font-weight: bold;
-    box-shadow: 1px 3px 5px $box-shadow;
+    cursor: pointer;
+
     &:hover {
         opacity: 0.9;
         box-shadow: 1px 3px 5px #696666;
@@ -15,13 +16,13 @@
 }
 
 @mixin puce-liste {
+    position: absolute;
+    padding : 5px 9px 5px 9px;
     counter-increment: numeroliste;
     content: counter(numeroliste);
-    position: absolute;
+    background-color: $color-primary;
     color: white;
     font-size: .8em;
-    background-color: $color-primary;
-    padding: 5px 9px 5px 9px;
     border-radius:50%;
 }
 
@@ -33,15 +34,19 @@
             height       : 25vh;
             max-width    : 100%;
             min-width    : 100%;
+
             &--ajust1 {
                 object-position: 50% 100%;
             }
+
             &--ajust2 {
                 object-position: 50% 62%;
             }
+
             &--ajust3 {
                 object-position: 50% 100%;
             }
+            
             &--ajust4 {
                 object-position: 50% 90%;
             }

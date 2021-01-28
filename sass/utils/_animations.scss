@@ -1,24 +1,24 @@
 @keyframes menumvt {
-    0% {
-    opacity: 0;
-    transform: translateY(40%); 
+    from {
+        opacity: 0;
+        transform: translateY(40%); 
     }
     
-    100% {
+    to {
         transform: translateY(0%);
     }
 }
 
 @keyframes rondbattement {
-    0% {
+    from {
         transform: scale(.6);
         opacity: 1;
     }
 
-    100% {
-            transform: scale(1.2);
-            transform: rotate(0.5turn);
-            opacity: 0;
+    to {
+        transform: scale(1.2);
+        transform: rotate(-0.5turn);
+        opacity: 0;
     }
 }
 

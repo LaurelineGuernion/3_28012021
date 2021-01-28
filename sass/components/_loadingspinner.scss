@@ -1,37 +1,37 @@
 .loading {
-    background: white;
     position: fixed;
-    font-family: Shrikhand, serif;
-    height: 100%;
-    width: 100%;
-    z-index: 1;
+    z-index : 1;
+    height  : 100%;
+    width   : 100%;
     padding-bottom: 20px;
     margin-top: -30px;
+    background: white;
     color: $color-secondary;
-    font-size: .6em;
-    display: flex;
-    flex-direction: column;
+    font-family: Shrikhand, serif;
+    font-size      : .6em;
+    display        : flex;
+    flex-direction : column;
     justify-content: center;
-    align-items: center;
+    align-items    : center;
     animation: loading-disparition .5s 3s ease-in forwards;
 
     &__rond {
         position: absolute;
-        height: 150px;
-        width: 150px;
+        height  : 150px;
+        width   : 150px;
         border-radius: 50%;
         border-bottom: solid 2px #FF79DA;
-        border-top: solid 2px #FF79DA;
-        animation: rondbattement 1.5s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+        border-top   : solid 2px #FF79DA;
+        animation    : rondbattement 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
 
         &::after {
-            content:"";
-            position: absolute;
-            height: 150px;
-            width: 150px;
-            background: radial-gradient(white 40%, #FF79DA);
+            content: "";
+            height : 150px;
+            width  : 150px;
+            position     : absolute;
+            background   : radial-gradient(white 40%, #FF79DA);
             border-radius: 50%;
-            animation: rondbattement 1.5s .8s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+            animation    : rondbattement 1s .5s cubic-bezier(0, 0.2, 0.8, 1) infinite;
         }
     }
 }

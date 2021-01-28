@@ -1,7 +1,7 @@
 // SECTION PRÉSENTATION avec champs de recherche + btn " Explorer nos restaurants "
 .champsrecherche {
     background-color: #EAEAEA;
-    mix-blend-mode: darken;
+    mix-blend-mode  : darken;
     display: flex;
     justify-content: center;
     padding: .7em;
@@ -14,10 +14,12 @@
     cursor: pointer;
     background-color: #EAEAEA;
     font-weight: bold;
-    border: none;
+    border     : none;
+
         &::placeholder {
             color: black;
         }
+
         &:focus {
             outline: 0;
         }
@@ -26,28 +28,28 @@
 
 #presentation {
     background-color: #f6f6f6;
-    text-align: center;
-    padding-left: 10%;
+    text-align   : center;
+    padding-left : 10%;
     padding-right: 10%;
 
     h2 {
         padding-top: 1.2em;
-        margin: auto;
+        margin     : auto;
         font-weight: bold;
-        width: 80%;
+        width      : 80%;
     }
 
     p {
-        margin-top: 15px;
-        color: gray;
-        font-size: 1em;
+        margin-top : 15px;
+        color      : gray;
+        font-size  : 1em;
         font-weight: 300;
     }
 }
 
 // SECTION FONCTIONNEMENT avec pictos + puces
 #fonctionnement {
-    margin: 1.3em;
+    margin  : 1.3em;
     position: relative;
     
     h3 {
@@ -60,16 +62,17 @@
     }
 
     li {
-        margin-right: auto;
-        margin-left: auto;
+        margin-right : auto;
+        margin-left  : auto;
         margin-bottom: 1.3em;
         padding: 1.4em 2em 1.4em 2.4em;
         text-align: left;
-        max-width: 100%;
+        max-width : 100%;
         background-color: #f6f6f6;
-        box-shadow: 1px 5px 10px $box-shadow;
+        box-shadow   : 1px 5px 10px $box-shadow;
         border-radius: 20px;
-        font-weight: bold;
+        font-weight  : bold;
+
         &:hover {
             background-color: #f5edff;
             cursor: pointer;
@@ -88,37 +91,37 @@
 
 // SECTION RESTAURANT
 #restaurants {
-    padding-top: 1.5em;
+    padding-top   : 1.5em;
     padding-bottom: 2.5em;
-    margin-top: 1.4em;
-    margin-right: 1.4em;
-    margin-left: 1.4em;
-    margin-bottom: 0;
-    position: relative;
+    margin-top    : 1.4em;
+    margin-right  : 1.4em;
+    margin-left   : 1.4em;
+    margin-bottom : 0;
+    position      : relative;
 }
 
 figcaption {
-    margin-left: 1em;
+    margin-left : 1em;
     margin-right: 1.4em;
-    display: flex;
+    display     : flex;
     justify-content: space-between;
     align-items: center;
 
     h4 {
-        margin-top: .7em;
+        margin-top   : .7em;
         margin-bottom: .3em;
     }
 
     p {
-        margin-top: 0;
+        margin-top   : 0;
         margin-bottom: 1.2em;
-        font-weight: 300;
+        font-weight  : 300;
     }
 }
 
 .encartmenu {
     position: relative;
-    margin-left: 0;
+    margin-left : 0;
     margin-right: 0;
     background-color: white;
 	box-shadow      : 0 7px 8px $box-shadow;
@@ -127,8 +130,8 @@ figcaption {
 
     &__nouveau {
     position: absolute;
-    right: 17px;
-    top: 5px;
+    right  : 17px;
+    top    : 5px;
     padding: 5px;
     font-weight: bold;
     background-color: $color-tertiary;

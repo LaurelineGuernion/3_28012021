@@ -1,13 +1,13 @@
 footer {
     padding: 1em;
     background-color: $color-footer;
-    color: white;
+    color     : white;
     text-align: left;
 
     h2 {
+    margin-top : .3em;
     font-family: Shrikhand, serif;
-    margin-top: .3em;
-    font-size: 1.2em;
+    font-size  : 1.2em;
     font-weight: 100;
     }
 }
@@ -20,7 +20,7 @@ footer {
     a {
         color: white;
         &:hover {
-        color:$color-secondary;
+            color: $color-secondary;
         }   
     }
 

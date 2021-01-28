@@ -1,22 +1,22 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap");
 @keyframes menumvt {
-  0% {
+  from {
     opacity: 0;
     transform: translateY(40%);
   }
-  100% {
+  to {
     transform: translateY(0%);
   }
 }
 @keyframes rondbattement {
-  0% {
+  from {
     transform: scale(0.6);
     opacity: 1;
   }
-  100% {
+  to {
     transform: scale(1.2);
-    transform: rotate(0.5turn);
+    transform: rotate(-0.5turn);
     opacity: 0;
   }
 }
@@ -68,15 +68,15 @@ button {
 }
 
 .loading {
-  background: white;
   position: fixed;
-  font-family: Shrikhand, serif;
+  z-index: 1;
   height: 100%;
   width: 100%;
-  z-index: 1;
   padding-bottom: 20px;
   margin-top: -30px;
+  background: white;
   color: #FF79DA;
+  font-family: Shrikhand, serif;
   font-size: 0.6em;
   display: flex;
   flex-direction: column;
@@ -91,28 +91,28 @@ button {
   border-radius: 50%;
   border-bottom: solid 2px #FF79DA;
   border-top: solid 2px #FF79DA;
-  animation: rondbattement 1.5s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  animation: rondbattement 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
 }
 .loading__rond::after {
   content: "";
-  position: absolute;
   height: 150px;
   width: 150px;
+  position: absolute;
   background: radial-gradient(white 40%, #FF79DA);
   border-radius: 50%;
-  animation: rondbattement 1.5s 0.8s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  animation: rondbattement 1s 0.5s cubic-bezier(0, 0.2, 0.8, 1) infinite;
 }
 
 .btndegrade {
-  cursor: pointer;
-  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
-  outline: 0;
   padding: 1em 1.4em 1em 1.4em;
-  border-radius: 50px;
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
   color: white;
+  outline: 0;
+  border-radius: 50px;
   border: none;
-  font-weight: bold;
   box-shadow: 1px 3px 5px #dfdcdc;
+  font-weight: bold;
+  cursor: pointer;
   margin-top: 1em;
   margin-bottom: 3.7em;
 }
@@ -121,15 +121,15 @@ button {
   box-shadow: 1px 3px 5px #696666;
 }
 
-.btncoeur {
+.btncoeur, .btncoeurmenu {
+  position: relative;
   height: 19px;
   width: 21.2px;
   padding-top: 1.2px;
-  cursor: pointer;
-  position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
-.btncoeur :hover::before {
+.btncoeur :hover::before, .btncoeurmenu :hover::before {
   content: "";
   position: absolute;
   top: 0;
@@ -140,38 +140,15 @@ button {
   transform: translateX(100%);
   transition: 0.3s ease-out;
 }
-.btncoeur :hover::after {
+.btncoeur :hover::after, .btncoeurmenu :hover::after {
   content: "";
   font-weight: bold;
   background-color: white;
   mix-blend-mode: lighten;
 }
 
-.btncoeurmenu {
-  height: 19px;
-  width: 21.2px;
-  padding-top: 1.2px;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-}
-.btncoeurmenu :hover::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 21.2px;
-  height: 100%;
-  width: 100%;
-  background: linear-gradient(0deg, #FF79DA 10%, #9356DC 100%);
-  transform: translateX(100%);
-  transition: 0.3s ease-out;
-}
 .btncoeurmenu :hover::after {
-  content: "";
-  font-weight: bold;
-  height: 19px;
   background-color: #f6f6f6;
-  mix-blend-mode: lighten;
 }
 
 header {
@@ -190,8 +167,8 @@ footer {
   text-align: left;
 }
 footer h2 {
-  font-family: Shrikhand, serif;
   margin-top: 0.3em;
+  font-family: Shrikhand, serif;
   font-size: 1.2em;
   font-weight: 100;
 }
@@ -283,13 +260,13 @@ footer h2 {
   color: #9356DC;
 }
 #fonctionnement li::before {
+  position: absolute;
+  padding: 5px 9px 5px 9px;
   counter-increment: numeroliste;
   content: counter(numeroliste);
-  position: absolute;
+  background-color: #9356DC;
   color: white;
   font-size: 0.8em;
-  background-color: #9356DC;
-  padding: 5px 9px 5px 9px;
   border-radius: 50%;
   margin-left: -50px;
 }
@@ -389,15 +366,15 @@ figcaption p {
   }
 }
 .headermenu {
-  display: flex;
-  margin-top: 20px;
   position: relative;
+  margin-top: 20px;
+  display: flex;
 }
 .headermenu .fas {
   position: absolute;
   top: 0.6em;
-  font-size: 1.3em;
   margin-left: 1.5em;
+  font-size: 1.3em;
 }
 .headermenu h1 {
   max-width: 100%;
@@ -419,12 +396,11 @@ figcaption p {
 }
 
 .mainmenu {
-  margin-top: 0.3em;
   position: relative;
   width: 100%;
+  margin-top: -55px;
   background-color: #f6f6f6;
   border-radius: 40px 40px 0 0;
-  margin-top: -55px;
 }
 
 .menu {
@@ -453,22 +429,22 @@ figcaption p {
 .encart__titre::after {
   content: "";
   display: block;
-  margin-top: 4px;
   width: 48px;
   height: 3px;
+  margin-top: 4px;
   background-color: #99E2D0;
 }
 
 .encart__description {
-  cursor: pointer;
-  margin-bottom: 1em;
   height: 75px;
+  margin-bottom: 1em;
   background-color: white;
   display: flex;
-  border-radius: 20px;
+  border-radius: 18px;
   box-shadow: 0 7px 8px #dfdcdc;
   overflow: hidden;
   will-change: transform;
+  cursor: pointer;
 }
 .encart__description--mvt1 {
   animation: menumvt 1s ease-out;
@@ -488,8 +464,8 @@ figcaption p {
 }
 
 .encart__infos {
-  padding-left: 0.6em;
   width: 150%;
+  padding-left: 0.7em;
   overflow: hidden;
 }
 .encart__infos p, .encart__infos h4 {
@@ -511,20 +487,20 @@ figcaption p {
 
 .encart__prix {
   margin-right: -20px;
-  font-weight: bold;
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
+  font-weight: bold;
   transform: translateX(120%);
   transition: 0.6s;
 }
 
 .encart__valider {
-  cursor: pointer;
-  background-color: #99E2D0;
-  border: none;
   height: 100%;
   width: 9.5em;
+  border: none;
+  background-color: #99E2D0;
+  cursor: pointer;
   transform: translateX(101%);
   transition: 0.6s;
 }
@@ -546,15 +522,15 @@ figcaption p {
 }
 
 .validation {
-  cursor: pointer;
   margin-top: 2em;
   display: flex;
   justify-content: center;
+  cursor: pointer;
 }
 .validation .btndegrade {
-  font-size: 1.2em;
   padding-right: 2.4em;
   padding-left: 2.4em;
+  font-size: 1.2em;
 }
 
 @media screen and (min-width: 930px) {
@@ -567,7 +543,8 @@ figcaption p {
   .mainmenu {
     position: relative;
     max-width: 1350px;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: -55px;
   }
 }
