@@ -1,5 +1,5 @@
-// PAGE MENU
-// HEADER PAGE MENU
+/* PAGE MENU */
+/* HEADER */
 .headermenu {
     position: relative;
     margin-top: 20px;
@@ -10,7 +10,6 @@
     top: .6em;
     margin-left: 1.5em;
     font-size: 1.3em;
-
     }
 
     h1 {
@@ -19,7 +18,7 @@
     }
 }
 
-// IMAGE PRINCIPALE PAGE MENU
+/* IMAGE PRINCIPALE - PAGE MENU */
 
 .imageentete {
     margin: 0;
@@ -45,7 +44,7 @@
     border-radius   : 40px 40px 0 0;
 }
 
-// MENU TITRE
+/* MENU TITRE - PAGE MENU */
 
 .menu {
     display: block;
@@ -69,7 +68,7 @@
     }
 }
 
-// SECTION COMPOSITION MENU
+/* SECTION COMPOSITION MENU - PAGE MENU */
 
 .encart__titre {
     font-weight: 300;
@@ -96,7 +95,7 @@
     will-change: transform;
     cursor: pointer;
 
-    // Animation encarts menus
+    /* Animation encarts menus */
     &--mvt1 {
         animation: menumvt 1s ease-out;
         opacity: 1;
@@ -168,8 +167,9 @@
     }
 }
 
-// Survol bouton encart menu
-.encart__description:hover {
+/* Survol bouton encart menu */
+.encart__description:hover,
+.encart__description:active {
     > .encart__valider {
         transform: translateX(0%);
     }
@@ -185,7 +185,7 @@
     }
 }
 
-// Bouton dégradé 
+/* Bouton dégradé */
 .validation {
     margin-top: 2em;
     display   : flex;
@@ -199,20 +199,28 @@
     }
 }
 
-// MEDIA QUERIES
-// MEDIUM
+/* MEDIA QUERIES - PAGE MENU */
 
+/* SMALL */
+@media all and (min-width: 300px) and (max-width: 568px) {
+    .menu__titre h2 {
+        font-size: 1.4em;
+    }
+    .encart__prix {
+        transform: translateX(90%);
+    }
+}
+
+/* MEDIUM */
 @media screen and (min-width: 930px) {
-    // PAGE MENU
     .menu {
         display: grid;
         grid-template-columns: repeat(3, 33.2%);
     }
 }
 
-// LARGE
+/* LARGE */
 @media screen and (min-width: 1200px) {
-    //PAGE MENU
     .mainmenu {
         position  : relative;
         max-width : 1350px;

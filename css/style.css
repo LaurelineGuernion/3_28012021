@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap");
+/* UTILS - ANIMATIONS */
 @keyframes menumvt {
   from {
     opacity: 0;
@@ -29,6 +30,7 @@
     z-index: -1;
   }
 }
+/* BASE */
 body {
   margin: 0;
   padding: 0;
@@ -59,7 +61,7 @@ a {
   text-decoration: none;
   color: black;
 }
-a:hover {
+a:hover, a:active {
   color: #9356DC;
 }
 
@@ -67,6 +69,7 @@ button {
   outline: 0;
 }
 
+/* COMPONENTS - LOADING SPINNER */
 .loading {
   position: fixed;
   z-index: 1;
@@ -91,7 +94,7 @@ button {
   border-radius: 50%;
   border-bottom: solid 2px #FF79DA;
   border-top: solid 2px #FF79DA;
-  animation: rondbattement 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  animation: rondbattement 1s cubic-bezier(0, 0.2, 0.8, 1) 4;
 }
 .loading__rond::after {
   content: "";
@@ -100,9 +103,10 @@ button {
   position: absolute;
   background: radial-gradient(white 40%, #FF79DA);
   border-radius: 50%;
-  animation: rondbattement 1s 0.5s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  animation: rondbattement 1s 0.5s cubic-bezier(0, 0.2, 0.8, 1) 4;
 }
 
+/* COMPONENTS - BOUTONS */
 .btndegrade {
   padding: 1em 1.4em 1em 1.4em;
   background: linear-gradient(to bottom right, #FF79DA, #9356DC);
@@ -116,7 +120,7 @@ button {
   margin-top: 1em;
   margin-bottom: 3.7em;
 }
-.btndegrade:hover {
+.btndegrade:hover, .btndegrade:active {
   opacity: 0.9;
   box-shadow: 1px 3px 5px #696666;
 }
@@ -129,7 +133,9 @@ button {
   overflow: hidden;
   cursor: pointer;
 }
-.btncoeur :hover::before, .btncoeurmenu :hover::before {
+.btncoeur :active::before,
+.btncoeur :hover::before, .btncoeurmenu :active::before,
+.btncoeurmenu :hover::before {
   content: "";
   position: absolute;
   top: 0;
@@ -140,17 +146,21 @@ button {
   transform: translateX(100%);
   transition: 0.3s ease-out;
 }
-.btncoeur :hover::after, .btncoeurmenu :hover::after {
+.btncoeur :active::after,
+.btncoeur :hover::after, .btncoeurmenu :active::after,
+.btncoeurmenu :hover::after {
   content: "";
   font-weight: bold;
   background-color: white;
   mix-blend-mode: lighten;
 }
 
+.btncoeurmenu :active::after,
 .btncoeurmenu :hover::after {
   background-color: #f6f6f6;
 }
 
+/* LAYOUT - HEADER */
 header {
   text-align: center;
   box-shadow: -5px 3px 3px rgba(0, 0, 0, 0.1);
@@ -160,6 +170,7 @@ header h1 {
   margin-bottom: 0;
 }
 
+/* LAYOUT - FOOTER */
 footer {
   padding: 1em;
   background-color: #353535;
@@ -179,7 +190,7 @@ footer h2 {
 .infofooter a {
   color: white;
 }
-.infofooter a:hover {
+.infofooter a:hover, .infofooter a:active {
   color: #FF79DA;
 }
 .infofooter .fas {
@@ -187,6 +198,8 @@ footer h2 {
   margin-right: 10px;
 }
 
+/* HOME PAGE */
+/* SECTION PRÉSENTATION - champs de recherche + btn " Explorer nos restaurants " */
 .champsrecherche {
   background-color: #EAEAEA;
   mix-blend-mode: darken;
@@ -229,6 +242,7 @@ footer h2 {
   font-weight: 300;
 }
 
+/* SECTION FONCTIONNEMENT - HOME PAGE avec pictos + puces */
 #fonctionnement {
   margin: 1.3em;
   position: relative;
@@ -251,12 +265,14 @@ footer h2 {
   box-shadow: 1px 5px 10px #dfdcdc;
   border-radius: 20px;
   font-weight: bold;
+  cursor: pointer;
 }
-#fonctionnement li:hover {
+#fonctionnement li:hover, #fonctionnement li:active {
   background-color: #f5edff;
   cursor: pointer;
 }
-#fonctionnement li:hover > .fas {
+#fonctionnement li:hover > .fas, #fonctionnement li:active > .fas {
+  /* hover avec couleur icone */
   color: #9356DC;
 }
 #fonctionnement li::before {
@@ -271,6 +287,7 @@ footer h2 {
   margin-left: -50px;
 }
 
+/* SECTION RESTAURANT - HOME PAGE */
 #restaurants {
   padding-top: 1.5em;
   padding-bottom: 2.5em;
@@ -335,6 +352,18 @@ figcaption p {
   color: #278870;
 }
 
+/* MEDIA QUERIES - HOME PAGE */
+/* SMALL */
+@media all and (min-width: 300px) and (max-width: 568px) {
+  #fonctionnement li {
+    font-size: smaller;
+  }
+
+  #fonctionnement li::before {
+    margin-left: -44px;
+  }
+}
+/* MEDIUM */
 @media screen and (min-width: 930px) {
   #presentation h2 {
     width: 100%;
@@ -359,12 +388,15 @@ figcaption p {
     justify-content: space-between;
   }
 }
+/* LARGE */
 @media screen and (min-width: 1200px) {
   #fonctionnement, #restaurants, .infofooter {
     max-width: 1200px;
     margin: auto;
   }
 }
+/* PAGE MENU */
+/* HEADER */
 .headermenu {
   position: relative;
   margin-top: 20px;
@@ -381,6 +413,7 @@ figcaption p {
   margin: auto;
 }
 
+/* IMAGE PRINCIPALE - PAGE MENU */
 .imageentete {
   margin: 0;
 }
@@ -403,6 +436,7 @@ figcaption p {
   border-radius: 40px 40px 0 0;
 }
 
+/* MENU TITRE - PAGE MENU */
 .menu {
   display: block;
 }
@@ -422,6 +456,7 @@ figcaption p {
   font-weight: 200;
 }
 
+/* SECTION COMPOSITION MENU - PAGE MENU */
 .encart__titre {
   font-weight: 300;
   font-size: 1em;
@@ -445,6 +480,7 @@ figcaption p {
   overflow: hidden;
   will-change: transform;
   cursor: pointer;
+  /* Animation encarts menus */
 }
 .encart__description--mvt1 {
   animation: menumvt 1s ease-out;
@@ -509,18 +545,23 @@ figcaption p {
   font-size: 2em;
 }
 
-.encart__description:hover > .encart__valider {
+/* Survol bouton encart menu */
+.encart__description:hover > .encart__valider,
+.encart__description:active > .encart__valider {
   transform: translateX(0%);
 }
-.encart__description:hover > .encart__prix {
+.encart__description:hover > .encart__prix,
+.encart__description:active > .encart__prix {
   transform: translateX(-120%);
   margin-left: 40px;
 }
-.encart__description:hover .fas {
+.encart__description:hover .fas,
+.encart__description:active .fas {
   transform: rotate(1turn);
   transition: 0.6s ease-in-out;
 }
 
+/* Bouton dégradé */
 .validation {
   margin-top: 2em;
   display: flex;
@@ -533,12 +574,25 @@ figcaption p {
   font-size: 1.2em;
 }
 
+/* MEDIA QUERIES - PAGE MENU */
+/* SMALL */
+@media all and (min-width: 300px) and (max-width: 568px) {
+  .menu__titre h2 {
+    font-size: 1.4em;
+  }
+
+  .encart__prix {
+    transform: translateX(90%);
+  }
+}
+/* MEDIUM */
 @media screen and (min-width: 930px) {
   .menu {
     display: grid;
     grid-template-columns: repeat(3, 33.2%);
   }
 }
+/* LARGE */
 @media screen and (min-width: 1200px) {
   .mainmenu {
     position: relative;
