@@ -126,8 +126,8 @@ figcaption {
     margin-left : 0;
     margin-right: 0;
     background-color: white;
-	box-shadow      : 0 7px 8px $box-shadow;
-	border-radius   : 22px;
+    box-shadow      : 0 7px 8px $box-shadow;
+    border-radius   : 22px;
     @include encart-img;
 
     &__nouveau {
