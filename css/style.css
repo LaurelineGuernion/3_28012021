@@ -354,13 +354,13 @@ figcaption p {
 
 /* MEDIA QUERIES - HOME PAGE */
 /* SMALL */
-@media all and (min-width: 300px) and (max-width: 568px) {
+@media all and (min-width: 200px) and (max-width: 374px) {
   #fonctionnement li {
     font-size: smaller;
   }
 
   #fonctionnement li::before {
-    margin-left: -44px;
+    margin-left: -40px;
   }
 }
 /* MEDIUM */
