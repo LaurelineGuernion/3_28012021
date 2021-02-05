@@ -215,7 +215,7 @@ figcaption {
             }
     
             &--ajust3 {
-                height: 215px;
+                height: 130%;
                 object-position: 20% -45px;
             }
         }
@@ -253,12 +253,12 @@ figcaption {
     .encartmenu {        
         &__img {
             &--ajust1 {
-                height: 130%;
+                height: 133%;
                 object-position: center -80px;
             }
     
             &--ajust3 {
-                height: 340px;
+                height: 130%;
                 object-position: 20% -70px;
             }
         }
@@ -271,7 +271,7 @@ figcaption {
 }
 
 /* LARGE */
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1100px) {
     #fonctionnement, #restaurants, .infofooter {
         max-width: 1000px;
         margin: auto;
