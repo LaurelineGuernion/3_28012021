@@ -25,31 +25,3 @@
     font-size: .8em;
     border-radius:50%;
 }
-
-@mixin encart-img {
-    .encartmenu {
-        &__img {
-            border-radius: 17px 17px 0 0;
-            object-fit   : cover;
-            height       : 25vh;
-            max-width    : 100%;
-            min-width    : 100%;
-
-            &--ajust1 {
-                object-position: 50% 100%;
-            }
-
-            &--ajust2 {
-                object-position: 50% 62%;
-            }
-
-            &--ajust3 {
-                object-position: 50% 100%;
-            }
-            
-            &--ajust4 {
-                object-position: 50% 90%;
-            }
-        }
-    }
-}
